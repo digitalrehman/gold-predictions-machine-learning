@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 
-from sklearn.metrics import mean_absolute_error, r2_score
+from sklearn.metrics import mean_absolute_error, r2_score, mean_squared_error, root_mean_squared_error
 
 st.set_page_config(page_title="Gold Price Prediction")
 st.title("Gold Price Prediction - Machine Learning Project")
@@ -68,13 +68,18 @@ model.fit(X_train, y_train)
 pred = model.predict(X_test)
 
 # Evaluation
+col1, col2 = st.columns(2)
 mae = mean_absolute_error(y_test, pred)
 r2 = r2_score(y_test, pred)
+mse = mean_squared_error(y_test, pred)
+rmse = root_mean_squared_error(y_test, pred)
 
 st.subheader("Model Performance")
 
 st.write("Mean Absolute Error:", mae)
 st.write("R2 Score:", r2)
+st.write("Mean Squared Error:", mse)
+st.write("Root Mean Squared Error:", rmse)
 
 # Plot
 st.subheader("Actual vs Predicted")
