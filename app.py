@@ -84,10 +84,10 @@ def main() -> None:
     rmse = np.sqrt(mse)
 
     st.subheader("Model Performance")
-    col1.write("Mean Absolute Error:", mae)
-    col1.write("R2 Score:", r2)
-    col2.write("Mean Squared Error:", mse)
-    col2.write("Root Mean Squared Error:", rmse)
+    col1.metric("Mean Absolute Error", f"{mae:.2f}")
+    col1.metric("R2 Score", f"{r2:.4f}")
+    col2.metric("Mean Squared Error", f"{mse:.2f}")
+    col2.metric("Root Mean Squared Error", f"{rmse:.2f}")
 
     # Plot
     st.subheader("Actual vs Predicted")
