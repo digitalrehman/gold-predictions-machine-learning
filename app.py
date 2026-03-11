@@ -76,10 +76,10 @@ rmse = root_mean_squared_error(y_test, pred)
 
 st.subheader("Model Performance")
 
-st.write("Mean Absolute Error:", mae)
-st.write("R2 Score:", r2)
-st.write("Mean Squared Error:", mse)
-st.write("Root Mean Squared Error:", rmse)
+col1.write("Mean Absolute Error:", mae)
+col1.write("R2 Score:", r2)
+col2.write("Mean Squared Error:", mse)
+col2.write("Root Mean Squared Error:", rmse)
 
 # Plot
 st.subheader("Actual vs Predicted")
