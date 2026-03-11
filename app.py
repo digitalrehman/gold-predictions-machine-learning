@@ -1,3 +1,4 @@
+from numpy import sqrt
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -72,7 +73,7 @@ col1, col2 = st.columns(2)
 mae = mean_absolute_error(y_test, pred)
 r2 = r2_score(y_test, pred)
 mse = mean_squared_error(y_test, pred)
-rmse = mean_squared_error(y_test, pred, squared=False)
+rmse = sqrt(mse)
 
 st.subheader("Model Performance")
 
