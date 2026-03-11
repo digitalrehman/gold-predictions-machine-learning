@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestRegressor
 
 from sklearn.metrics import mean_absolute_error, r2_score
 
-
+st.set_page_config(page_title="Gold Price Prediction")
 st.title("Gold Price Prediction - Machine Learning Project")
 
 # Dataset URL
